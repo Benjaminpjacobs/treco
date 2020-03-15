@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <div>
+      <% if logged_in? %>
+        <p>
+          <%= button_to "Logout", '/logout', method: :delete%>
+        </p>
+      <%end%>
+    </div>
     <%= yield %>
   </body>
 </html>
