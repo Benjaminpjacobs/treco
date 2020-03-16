@@ -5,18 +5,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <!-- <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> -->
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/sketchy/bootstrap.min.css' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div>
-      <% if logged_in? %>
-        <p>
-          <%= button_to "Logout", '/logout', method: :delete%>
-        </p>
-      <%end%>
-    </div>
-    <%= yield %>
+    <%= render "shared/nav" %>
+    <br/>
+    <div class="container-md">
+      <%= yield %>
+    </div
   </body>
 </html>

@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <h1 class="display-4">Hi, <%= current_user.username%>!</h1>
+  <p class="lead">What would you like to do?</p>
+  <hr class="my-4">
+  <div class="d-flex flex-row bd-highlight mb-6">
+    <%= button_to("Make a Rec", "/recommendations/new", method: :get, class: "p-2 ml-3")%>
+    <%= button_to("Check my Recs", "/recommendations", method: :get, class: "p-2 ml-3")%>
+  </div>
+</div>

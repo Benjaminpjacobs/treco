@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root to: 'sessions#welcome'
 
   resources :users, only: [:new, :create]
@@ -9,4 +8,9 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#logout'
   get 'welcome', to: 'sessions#welcome'
   get 'authorized', to: 'sessions#page_requires_login'
+
+  get 'dashboard', to: 'dashboard#index'
+
+
+  resources 'recommendations', only: [:new, :create, :index, :show]
 end

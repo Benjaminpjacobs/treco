@@ -1,0 +1,20 @@
+<div class="container-sm">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col">Description</th>
+      <th scope="col">Recommended By</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recommendations.each do |rec| %>
+    <tr>
+      <td><%= rec.category.name %></td>
+      <td><%= rec.description %></td>
+      <td><%= rec.user.username %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
